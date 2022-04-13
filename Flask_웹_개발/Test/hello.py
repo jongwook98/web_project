@@ -45,14 +45,19 @@ def user(name):
     #return '<h1>Hello, %s!</h1>' % name
 
 @app.route('/accident/')
-def acci():
+def accident():
     return render_template('accident.html')
 
 
-@app.route('/showImg')
-def showImg():
-    return render_template('showImg.html')
+@app.route('/defective_lane/')
+def defective_lane():
+    return render_template('defective_lane.html')
+
+
+@app.route('/over_speeding/')
+def over_speeding():
+    return render_template('over_speeding.html')
 
 if __name__=='__main__':
-    #app.run(debug=True)
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
+    #app.run(host='0.0.0.0', port=5000, debug=True)
