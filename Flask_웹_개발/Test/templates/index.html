@@ -5,20 +5,19 @@
 {% block page_content %}
 <div class="page-header">
 	<body>
-		<h1>Hello, visitor!</h1>
-		<h3>This is the web page for the <b>patrol car project.</b></h4>
+		<h1 style="font-size:400%">Hello, visitor!</h1>
+		<h3 style="font-size:200%">This is the web page for the <b>patrol car project.</b></h4>
 		<br>
-		<h3>Patrol vehicle robots fuse lidar sensor and camera sensors to perform autonomous driving, and have the following functions.</h4>
+		<h3 style="font-size:200%">Patrol vehicle robots fuse lidar sensor and camera sensors to perform autonomous driving, and have the following functions.</h4>
 		<br>
 		<ol>
-			<h4>
+			<h4 style="font-size:150%">
 			<li>Identify and control speeding vehicles.</li>
 			<li>Recognize the accident site and take pictures and action.</li>
 			<li>Recognize the defective lane and take a picture to show the location.</li>
 			</h4>
 		</ol>
 		<img src="{{url_for('static', filename='/img/walk.gif')}}">
-
 	</body>
 </div>
 {% endblock %}

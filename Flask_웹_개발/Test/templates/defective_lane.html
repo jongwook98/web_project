@@ -5,7 +5,19 @@
 {% block page_content %}
 <html>
 	<body>
-		<img src="{{url_for('static', filename='/img/walk.gif')}}">
+		{% for i in range(case, 0, -1) %}
+		<li> 이미지 번호.{{i}} </li>
+		<style>
+			img{ float: left;}
+			.p2{ clear: both;}
+		</style>
+		<p>
+		<img src="/static/img/defective_lane/defective_lane_{{i}}.jpg"
+			height="300" width="400">
+		This is defective_lane_{{i}} 불량차선의 데이터다
+		</p>
+		<p class="p2"></p2>
+		{% endfor %}
 	</body>
 </html>
 

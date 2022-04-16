@@ -1,6 +1,4 @@
-#from flask import Flask, redirect, url_for, render_template
-#from datetime import datetime
-
+import pathlib
 from flask import Flask, render_template, session, redirect, url_for, flash
 #from flask_wtf import FlaskForm
 #from wtforms import StringField, SubmitField
@@ -38,24 +36,43 @@ def index():
     return render_template('index.html')
    
 
+'''
 @app.route('/user/<name>')
 def user(name):
     return render_template('user.html', name=name)
+'''
 
+'''
+@app.route('/obstacle_detect/')
+def obstacle():
+    return render_template('obstacle.html', top=top, left=left)
+'''
 
 @app.route('/accident/')
 def accident():
-    return render_template('accident.html')
+    accident_case = 0
+    for path in pathlib.Path("static/img/accident_scene").iterdir():
+        if path.is_file():
+            accident_case += 1
+    return render_template('accident.html', case=accident_case)
 
 
 @app.route('/defective_lane/')
 def defective_lane():
-    return render_template('defective_lane.html')
+    defective_lane_case = 0
+    for path in pathlib.Path("static/img/defective_lane").iterdir():
+        if path.is_file():
+            defective_lane_case += 1
+    return render_template('defective_lane.html', case=defective_lane_case)
 
 
 @app.route('/over_speeding/')
 def over_speeding():
-    return render_template('over_speeding.html')
+    over_speeding_case = 0
+    for path in pathlib.Path("static/img/over_speeding").iterdir():
+        if path.is_file():
+            over_speeding_case += 1
+    return render_template('over_speeding.html', case=over_speeding_case)
 
 
 if __name__=='__main__':
