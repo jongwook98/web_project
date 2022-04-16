@@ -3,23 +3,25 @@
 {% block title %}Accident scene{% endblock %}
 
 {% block page_content %}
-<h1>
-	<b>
-		{% for i in range(case, 0, -1) %}
-		<li> 이미지 번호나 날짜.{{i}} </li>
+<h3>
+	<body>
+		{% for row in rows %}
 		<style>
 			img{ float: left;}
-
 			.p2{ clear: both;}
 		</style>
 		<p>
-		<img src="/static/img/accident_scene/accident_{{i}}.jpg"
-		     height="300" width="400">
-		This is terrible accident_{{i}} We should always be alert to traffic accidents. 데이터베이스 기반  위치 데이터나 촬영 시간을 나타내볼까?
+		<tr>
+			<td>{{row["case_"]}}</td>
+			<img src="{{row["image_path"]}}" height="300" width="400">
+			<td>{{row["information"]}}</td>
+			<td>{{row["datetime"]}}</td>
+		</tr>
+		Accident case 
 		</p>
 		<p class="p2"></p>
 		{% endfor %}
-	</b>
-</h1>
+	</body>
+</h3>
 
 {% endblock %}

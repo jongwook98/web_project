@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('over_speeding.db')
 print('Database creation successful')
 
 conn.execute(

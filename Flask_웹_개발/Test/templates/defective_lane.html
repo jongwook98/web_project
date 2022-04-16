@@ -3,22 +3,25 @@
 {% block title %}Defective Lane{% endblock %}
 
 {% block page_content %}
-<html>
+<h3>
 	<body>
-		{% for i in range(case, 0, -1) %}
-		<li> 이미지 번호.{{i}} </li>
+		{% for row in rows %}
 		<style>
 			img{ float: left;}
 			.p2{ clear: both;}
 		</style>
 		<p>
-		<img src="/static/img/defective_lane/defective_lane_{{i}}.jpg"
-			height="300" width="400">
-		This is defective_lane_{{i}} 불량차선의 데이터다
+		<tr>
+			<td>{{row["case_"]}}</td>
+			<img src="{{row["image_path"]}}" height="300" width="400">
+			<td>{{row["information"]}}</td>
+			<td>{{row["datetime"]}}</td>
+		</tr>
+		Defective lane case
 		</p>
 		<p class="p2"></p2>
 		{% endfor %}
 	</body>
-</html>
+</h3>
 
 {% endblock %}
